@@ -1,0 +1,13 @@
+server:
+  port: 8081
+
+spring:
+  cloud:
+    gateway:
+      server:
+        webmvc:
+          routes:
+            - id: book-service
+              uri: http://localhost:8080
+              predicates:
+                - Path=/api/books/**
